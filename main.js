@@ -81,6 +81,10 @@ const calculateEMI = () => {
   refreshInputValues(); // Refresh input values based on the user input
 
   // EMI formula based on loan amount, interest rate, and tenure
+  // EMI= (P x r(1 + r)^n) / ((1 + r)^n - 1)     EMI calculation formula
+  // P is the loanAmount (e.g., $10,000).
+  // r is the monthly interest rate, which is the annual interest rate divided by 12 (e.g., 8.5% per year = 0.085/12 = 0.007083 per month).
+  // n is the loan tenure in months (e.g., 240 months).
   let emi =
     loanAmount *
     interest *
@@ -118,3 +122,8 @@ init();
 
 // Event listener for the calculate button
 calculateBtn.addEventListener("click", init); // When button is clicked, re-calculate and update the chart
+
+
+
+// EMI= (P x r(1 + r)^n) / ((1 + r)^ - 1)
+          
